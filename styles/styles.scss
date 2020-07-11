@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    font-family: "Heebo", sans-serif;
+    font-family: "Montserrat Subrayada", sans-serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../images/backgrounds/desktop_background.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-container {
+    display: grid;
+    grid-template-rows: 100px 300px 70px 50px;
+    grid-gap: 2rem;
+    width: 75%;
+    .main-heading {
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            color: #fff;
+            span {
+                color: red;
+                font-size: 5rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .breathe-circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        height: 300px;
+        width: 300px;
+        position: relative;
+        margin-top: -10px;
+        transform: scale(1);
+        .circle {
+            background-color: #010f1c;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        #text {
+            font-size: 1.1rem;
+            font-family: "Montserrat", sans-serif;
+            color: #fff;
+        }
+        .pointer-container {
+            position: absolute;
+            top: -40px;
+            left: 140px;
+            width: 20px;
+            height: 190px;
+            animation: rotate 7.5s linear forwards infinite;
+            transform-origin: bottom center;
+            .pointer {
+                background-color: #fff;
+                border-radius: 50%;
+                height: 20px;
+                width: 20px;
+                display: block;
+            }
+        }
+        .gradient-circle {
+            background: conic-gradient( #55b7a4 0%, #4ca493 40%, #fff 40%, #fff 60%, #336d62 60%, #2a5b52 100%);
+            height: 320px;
+            width: 320px;
+            z-index: -2;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+        }
+    }
+    .breathe-circle.grow {
+        animation: grow 3s linear forwards;
+    }
+    .breathe-circle.shrink {
+        animation: shrink 3s linear forwards;
+    }
+    .btn {
+        margin-top: 2.5rem;
+        #btn-reset {
+            box-shadow: 0px 10px 14px -7px #a60000;
+            background: linear-gradient(to bottom, #e0121c 5%, #d12a7b 100%);
+            background-color: #e0121c;
+            border-radius: 8px;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 13px 32px;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-shadow: 0px 1px 0px #1e7694;
+            &:hover {
+                background: linear-gradient(to bottom, #d12a7b 5%, #e0121c 100%);
+                background-color: #d12a7b;
+            }
+            &:active {
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+    .footer {
+        color: #bbc7ce;
+        display: block;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 2rem 0;
+    }
+}
+
+// KEYFRAMES
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+//BREAKPOINT FOR MOBILE
+//
+//
+@media (min-width: 320px) and (max-width: 767px) {
+    body {
+        background-image: url(../images/backgrounds/other_viewports_background.jpg);
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .main-container {
+        grid-gap: 20px;
+        .main-heading {
+            h1 {
+                font-size: 2.5rem;
+                span {
+                    font-size: 4rem;
+                }
+            }
+        }
+        .breathe-circle {
+            height: 200px;
+            width: 200px;
+            .pointer-container {
+                position: absolute;
+                top: -40px;
+                left: 90px;
+                width: 20px;
+                height: 140px;
+            }
+            .gradient-circle {
+                height: 220px;
+                width: 220px;
+            }
+        }
+        .btn {
+            position: relative;
+            bottom: 5rem;
+            #btn-reset {
+                font-size: 1rem;
+            }
+        }
+        .footer {
+            position: relative;
+            bottom: 4rem;
+            font-size: 0.8rem;
+            color: #000;
+        }
+    }
+    .vid {
+        display: none;
+    }
+}
+
+//BREAKPOINT FOR TABLET AND LAPTOP
+//
+//
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        background-image: url(../images/backgrounds/other_viewports_background.jpg);
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .main-container {
+        grid-gap: 20px;
+        .main-heading {
+            h1 {
+                font-size: 2.5rem;
+                span {
+                    font-size: 4rem;
+                }
+            }
+        }
+        .breathe-circle {
+            height: 250px;
+            width: 250px;
+            .pointer-container {
+                position: absolute;
+                top: -40px;
+                left: 115px;
+                width: 20px;
+                height: 165px;
+            }
+            .gradient-circle {
+                height: 270px;
+                width: 270px;
+            }
+        }
+        .btn {
+            position: relative;
+            bottom: 2rem;
+            #btn-reset {
+                font-size: 1rem;
+            }
+        }
+        .footer {
+            position: relative;
+            bottom: 1rem;
+            font-size: 0.8rem;
+            color: #000;
+        }
+    }
+    .vid {
+        display: none;
+    }
+}
